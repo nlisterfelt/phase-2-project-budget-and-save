@@ -1,0 +1,18 @@
+{
+    "budget": [
+        {
+            "id": 1,
+            "name": "walmart",
+            "date": "12",
+            "amount": 68.12,
+            "category": "food"
+        },
+        {
+            "id": 2,
+            "name": "vacation",
+            "date": "9",
+            "amount": 100,
+            "category": "savings"
+        }
+    ]
+}
