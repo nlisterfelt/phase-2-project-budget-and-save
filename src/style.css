@@ -1,1 +1,28 @@
-
+.header{
+    text-align: center;
+}
+nav {
+    display: flex;
+    align-items: center;
+    
+    height: 50px;
+    background-color: rgb(177, 234, 211);
+}
+.navigation-links {
+    padding-right: 5px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    color: black;
+}
+.navigation-links.active{
+    background-color: rgb(43, 149, 93);
+    color: white
+}
+input[type='text'], input[type='number'], select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block
+}

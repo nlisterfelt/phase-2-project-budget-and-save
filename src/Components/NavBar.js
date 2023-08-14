@@ -3,11 +3,14 @@ import { NavLink } from "react-router-dom";
 
 function NavBar(){
     return (
-        <nav>
-            <NavLink exact to="/">Budget</NavLink>
-            <NavLink to="/savings">Savings Goals</NavLink>
-            <NavLink to='/breakdown'>Spending Breakdown</NavLink>
-        </nav>
+        <div>
+            <h1 className="header">Budget and Save</h1>
+            <nav>
+                <NavLink className="navigation-links" exact to="/">Budget</NavLink>
+                <NavLink className="navigation-links" to='/newentryform'>New Budget Item Form</NavLink>
+                <NavLink className="navigation-links" to="/savings">Savings Goals</NavLink>
+            </nav>
+        </div>
     )
 }
 
