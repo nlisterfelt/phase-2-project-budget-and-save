@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Savings from './Savings';
 import Budget from './Budget';
 import Breakdown from './Breakdown';
@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Switch>
         <Route path='/savings'>
           <Savings />
         </Route>
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/'>
           <Budget />
         </Route>
+      </Switch>
     </div>
   );
 }
