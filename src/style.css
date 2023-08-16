@@ -26,3 +26,21 @@ input[type='text'], input[type='number'], select{
     margin: 8px 0;
     display: inline-block
 }
+.category-cards{
+    border-color: blueviolet;
+    border-width: 5px;
+}
+.moneyPos{
+    color: green;
+}
+.moneyNeg{
+    color: red;
+}
+.goal-box{
+    width: 90%;
+    height: 20px;
+    border-color: black;
+    border-width: 5px;
+    color: orange;
+    border-style: solid; 
+}
