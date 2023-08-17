@@ -1,21 +1,53 @@
 {
-    "budget": [
-        {
-            "id": 1,
-            "name": "walmart",
-            "date": "12",
-            "amount": 68.12,
-            "category": "Food"
-        },
-        {
-            "id": 2,
-            "name": "vacation",
-            "date": "9",
-            "amount": 100,
-            "category": "Savings"
-        }
-    ],
-    "goals": [
-        "Vacation"
-    ]
+  "budget": [
+    {
+      "id": 1,
+      "name": "walmart",
+      "date": 12,
+      "amount": 68.12,
+      "category": "Food"
+    },
+    {
+      "id": 2,
+      "name": "vacation",
+      "date": 9,
+      "amount": 100,
+      "category": "Savings"
+    },
+    {
+      "name": "paycheck 1",
+      "date": 2,
+      "amount": 1111,
+      "category": "Income",
+      "id": 3
+    },
+    {
+      "name": "vacation",
+      "date": 5,
+      "amount": 200,
+      "category": "Savings",
+      "id": 4
+    },
+    {
+      "name": "paycheck 2",
+      "date": 15,
+      "amount": 2000,
+      "category": "Income",
+      "id": 5
+    },
+    {
+      "name": "misc",
+      "date": 3,
+      "amount": 150,
+      "category": "Income",
+      "id": 6
+    }
+  ],
+  "goals": [
+    {
+      "description": "Vacation",
+      "amount": 1000,
+      "saved": 50
+    }
+  ]
 }

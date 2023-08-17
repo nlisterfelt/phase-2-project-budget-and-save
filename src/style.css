@@ -31,7 +31,7 @@ input[type='text'], input[type='number'], select{
     border-width: 5px;
 }
 .moneyPos{
-    color: green;
+    color: rgb(0, 128, 0);
 }
 .moneyNeg{
     color: red;

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 
-function NewBudget({categories}){
+function NewBudget({categories, onBudgetSubmit}){
+    const history = useHistory();
     const [formData, setFormData]=useState({
         name: '',
         date: 0,
@@ -10,10 +12,29 @@ function NewBudget({categories}){
     const categoriesJSX = categories.map(categoryOption=><option value={categoryOption} key={categoryOption}>{categoryOption}</option>)
     
     function handleFormSubmit(e){
-        e.preventDefault()
+        e.preventDefault() 
+        fetch('http://localhost:3000/budget', {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify(formData)
+        })
+        .then(resp=>resp.json())
+        .then(data=>{
+            onBudgetSubmit({...formData, ...data})
+            history.push('/budget')
+        })
     }
     function handleInputChange(e){
-        setFormData({...formData, [e.target.name]: e.target.value})
+        if(e.target.type==='number'){
+            if (e.target.value===''){
+                setFormData({...formData, [e.target.name]: ''})
+            } else {
+                const numb = parseInt(e.target.value, 10)
+                setFormData({...formData, [e.target.name]: numb})
+            }
+        } else {
+            setFormData({...formData, [e.target.name]: e.target.value})
+        }
     }
     return (
         <div> 

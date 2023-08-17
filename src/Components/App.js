@@ -13,26 +13,36 @@ function App() {
   const [totalSpent, setTotalSpent]=useState(0)
   const [goals, setGoals]=useState([])
   const categories = ['Income', 'Savings', 'Expenses', 'Food', 'Miscellaneous']
-
+  let startIncome=0
+  let startSpent=0
   useEffect(()=>{
     fetch('http://localhost:3000/budget')
     .then(resp=>resp.json())
     .then(data=>{
       setBudgetItems(data)
-      data.forEach(item=>handleAddAmount(item))
+      data.forEach(item=>{
+        if(item.category==='Income'){
+          startIncome+=item.amount
+        } else {
+          startSpent+=item.amount
+        }
+      })
+      setTotalIncome(startIncome)
+      setTotalSpent(startSpent)
     })
-
     fetch('http://localhost:3000/goals')
     .then(resp=>resp.json())
     .then(data=>setGoals(data))
   }, [])
-  function handleAddAmount(item){
-    if(item.category==='Income'){
-      setTotalIncome(totalIncome+item.amount)
-    } else {
-      setTotalSpent(totalSpent+item.amount)
-    }
+
+
+  function handleBudgetSubmit(data){
+    setBudgetItems([...budgetItems, ...data])
   }
+  function handleSavingsSubmit(data){
+    setGoals([...goals, ...data])
+  }
+
   return (
     <div className="App">
       <NavBar />
@@ -41,13 +51,13 @@ function App() {
           <Home />
         </Route>
         <Route exact path='/savings'>
-          <Savings goals={goals}/>
+          <Savings goals={goals} />
         </Route>
         <Route path='/savings/new'>
-          <NewSavings />
+          <NewSavings onSavingsSubmit={handleSavingsSubmit}/>
         </Route>
         <Route path='/budget/new'>
-          <NewBudget categories={categories} onBudgetFormSubmit/>
+          <NewBudget categories={categories} onBudgetSubmit={handleBudgetSubmit} />
         </Route>
         <Route exact path='/budget'>
           <Budget budgetItems={budgetItems} categories={categories} totalIncome={totalIncome} totalSpent={totalSpent}/>
