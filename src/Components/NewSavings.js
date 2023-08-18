@@ -20,6 +20,7 @@ function NewSavings({onSavingsSubmit}){
             setSavingsFormData({...savingsFormData, [e.target.name]: e.target.value})
         }
     }
+    
     function handleFormSubmit(e){
         e.preventDefault()
         fetch('http://localhost:3000/goals', {
@@ -29,9 +30,8 @@ function NewSavings({onSavingsSubmit}){
         })
         .then(resp=>resp.json())
         .then(data=>{
-            console.log(data)
-            //onSavingsSubmit([...savingsFormData, ...data])
-            //history.push('/savings')
+            onSavingsSubmit({...savingsFormData, ...data})
+            history.push('/savings')
         })
     }
     return (

@@ -8,13 +8,6 @@
       "category": "Food"
     },
     {
-      "id": 2,
-      "name": "vacation",
-      "date": 9,
-      "amount": 100,
-      "category": "Savings"
-    },
-    {
       "name": "paycheck 1",
       "date": 2,
       "amount": 1111,
@@ -41,13 +34,40 @@
       "amount": 150,
       "category": "Income",
       "id": 6
+    },
+    {
+      "name": "Gas",
+      "date": 6,
+      "amount": 50,
+      "category": "Expenses",
+      "id": 7
+    },
+    {
+      "name": "Legos",
+      "date": 12,
+      "amount": 250,
+      "category": "Miscellaneous",
+      "id": 8
     }
   ],
   "goals": [
     {
       "description": "Vacation",
+      "amount": 2000,
+      "saved": 50,
+      "id": 1
+    },
+    {
+      "description": "Chrismas",
       "amount": 1000,
-      "saved": 50
+      "saved": 200,
+      "id": 2
+    },
+    {
+      "description": "New car",
+      "amount": 20000,
+      "saved": 14000,
+      "id": 3
     }
   ]
 }

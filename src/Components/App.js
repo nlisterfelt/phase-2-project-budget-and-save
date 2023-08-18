@@ -37,10 +37,18 @@ function App() {
 
 
   function handleBudgetSubmit(data){
-    setBudgetItems([...budgetItems, ...data])
+    setBudgetItems([...budgetItems, data])
   }
   function handleSavingsSubmit(data){
-    setGoals([...goals, ...data])
+    setGoals([...goals, data])
+  }
+  function handleSavingsDelete(id){
+    const newGoals=goals.filter(goal=>goal.id!==id)
+    setGoals(newGoals)
+  }
+  function handleBudgetItemDelete(id){
+    const newBudgetItems=budgetItems.filter(item=>item.id!==id)
+    setBudgetItems(newBudgetItems)
   }
 
   return (
@@ -51,7 +59,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path='/savings'>
-          <Savings goals={goals} />
+          <Savings goals={goals} onSavingsDelete={handleSavingsDelete}/>
         </Route>
         <Route path='/savings/new'>
           <NewSavings onSavingsSubmit={handleSavingsSubmit}/>
@@ -60,7 +68,7 @@ function App() {
           <NewBudget categories={categories} onBudgetSubmit={handleBudgetSubmit} />
         </Route>
         <Route exact path='/budget'>
-          <Budget budgetItems={budgetItems} categories={categories} totalIncome={totalIncome} totalSpent={totalSpent}/>
+          <Budget budgetItems={budgetItems} categories={categories} totalIncome={totalIncome} totalSpent={totalSpent} onBudgetItemDelete={handleBudgetItemDelete}/>
         </Route>
         <Route path='*'>
           <h2>404 not found</h2>
