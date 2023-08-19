@@ -54,7 +54,7 @@
     {
       "description": "Vacation",
       "amount": 2000,
-      "saved": 50,
+      "saved": "5",
       "id": 1
     },
     {

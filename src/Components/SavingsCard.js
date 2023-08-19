@@ -15,16 +15,18 @@ function SavingsCard({goal, onSavingsDelete}){
         })
         onSavingsDelete(goal.id)
     }
-    function handleEditSubmit(){
+    function handleEditSubmit(e){
+        e.preventDefault()
         fetch(`http://localhost:3000/goals/${goal.id}`, {
             method: 'PATCH', 
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({
-
+                saved: newSaved
             })
         })
+        setIsEdit(false)
     }
-    console.log(newSaved)
+
     return (
         <div >
             <h3>
@@ -34,7 +36,7 @@ function SavingsCard({goal, onSavingsDelete}){
             </h3> 
             
             <p>Goal amount: {goal.amount}  /  Saved: {goal.saved}  /  Percent saved: {percentageComplete}%</p>
-            {isEdit ? <form>
+            {isEdit ? <form onSubmit={handleEditSubmit}>
                 <label>New saved amount:</label>
                 <input type='number' value={newSaved} onChange={e=>setNewSaved(e.target.value)}></input>
                 <button>Submit</button>
