@@ -11,10 +11,8 @@ function Budget({budgetItems, categories, totalIncome, totalSpent, onBudgetItemD
     return (
         <div>
             <h2>Budget</h2>
-            <span style={{display: 'flex'}}>
-                <h2>Income: ${totalIncomeFormatted} Spent: ${totalSpentFormatted} Leftover: </h2>
-                <h2 className={totalIncome-totalSpent>=0? 'moneyPos': 'moneyNeg'} >${moneyDifference}</h2>
-            </span>
+            <h3 style={{marginBottom: 0}}>Income: ${totalIncomeFormatted} / Spent: ${totalSpentFormatted}</h3>
+            <h3 className={totalIncome-totalSpent>=0? 'moneyPos': 'moneyNeg'} >Leftover: ${moneyDifference}</h3>
             {categoryCards}
         </div>
     )

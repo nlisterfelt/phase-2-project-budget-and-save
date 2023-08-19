@@ -68,6 +68,12 @@
       "amount": 20000,
       "saved": 14000,
       "id": 3
+    },
+    {
+      "description": "Buy a house",
+      "amount": 20000,
+      "saved": 1000,
+      "id": 4
     }
   ]
 }
