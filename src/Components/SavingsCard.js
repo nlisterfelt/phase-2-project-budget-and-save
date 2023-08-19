@@ -25,18 +25,20 @@ function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
     }
     function handleEditSubmit(e){
         e.preventDefault()
-        const numb=parseInt(newSaved)
-        fetch(`http://localhost:3000/goals/${goal.id}`, {
-            method: 'PATCH', 
-            headers: {'content-type': 'application/json'},
-            body: JSON.stringify({
-                saved: numb
+        if(newSaved!==''){
+            const numb=parseInt(newSaved)
+            fetch(`http://localhost:3000/goals/${goal.id}`, {
+                method: 'PATCH', 
+                headers: {'content-type': 'application/json'},
+                body: JSON.stringify({
+                    saved: numb
+                })
             })
-        })
-        .then(resp=>resp.json())
-        .then(data=>{
-            onSavingsEdit({...goal, saved: numb})
-        })
+            .then(resp=>resp.json())
+            .then(data=>{
+                onSavingsEdit({...goal, saved: numb})
+            })
+        }
         setIsEdit(false)
     }
 
