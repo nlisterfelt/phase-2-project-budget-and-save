@@ -33,6 +33,10 @@ function SavingsCard({goal, onSavingsDelete}){
             </h3> 
             
             <p>Goal amount: {goal.amount}  /  Saved: {goal.saved}  /  Percent saved: {percentageComplete}%</p>
+            <form>
+                <label>New saved amount:</label>
+                <input></input>
+            </form>
             <div className="goal-box">
                 <div style={newStyle}></div>
             </div>
