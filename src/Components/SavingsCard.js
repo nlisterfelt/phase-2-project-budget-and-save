@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
 function SavingsCard({goal, onSavingsDelete}){
+    const [newSaved, setNewSaved]=useState(goal.saved)
+    const [isEdit, setIsEdit]=useState(false)
     const percentageComplete = goal.saved/goal.amount*100
     const newStyle = {
         backgroundColor: "rgb(0, 128, 0)",
@@ -13,11 +15,23 @@ function SavingsCard({goal, onSavingsDelete}){
         })
         onSavingsDelete(goal.id)
     }
+    function handleEdit(){
+        fetch(`http://localhost:3000/goals/${goal.id}`, {
+            method: 'PATCH', 
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({
+
+            })
+        })
+    }
     return (
         <div >
-            <h3>{goal.description}</h3>
-            <button /*onClick={onSavingsEdit}*/>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+            <h3>
+                {goal.description}
+                <button className='editDelete' onClick={handleEdit}>Edit</button>
+                <button className='editDelete' onClick={handleDelete}>X</button>
+            </h3> 
+            
             <p>Goal amount: {goal.amount}  /  Saved: {goal.saved}  /  Percent saved: {percentageComplete}%</p>
             <div className="goal-box">
                 <div style={newStyle}></div>

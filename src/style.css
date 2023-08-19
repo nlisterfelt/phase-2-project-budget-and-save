@@ -43,4 +43,8 @@ input[type='text'], input[type='number'], select{
     border-width: 5px;
     color: orange;
     border-style: solid; 
+    margin-bottom: 40px;
+}
+.editDelete{
+    margin-left: 10px;
 }

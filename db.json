@@ -29,13 +29,6 @@
       "id": 5
     },
     {
-      "name": "misc",
-      "date": 3,
-      "amount": 150,
-      "category": "Income",
-      "id": 6
-    },
-    {
       "name": "Gas",
       "date": 6,
       "amount": 50,
@@ -48,6 +41,13 @@
       "amount": 250,
       "category": "Miscellaneous",
       "id": 8
+    },
+    {
+      "name": "misc",
+      "date": 3,
+      "amount": 150,
+      "category": "Income",
+      "id": 9
     }
   ],
   "goals": [
