@@ -10,9 +10,9 @@
 
 
 
-## Savings
+## Savings Goals
 
 
 
-## New Savings Goal Form
+## New Goal Form
 

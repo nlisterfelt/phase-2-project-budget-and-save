@@ -55,7 +55,6 @@ function App() {
       }
     })
     setGoals(newGoals)
-    console.log(newGoals)
   }
   function handleBudgetItemDelete(id){
     const newBudgetItems=budgetItems.filter(item=>item.id!==id)

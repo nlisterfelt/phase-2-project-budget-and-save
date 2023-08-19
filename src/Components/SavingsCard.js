@@ -15,6 +15,14 @@ function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
         })
         onSavingsDelete(goal.id)
     }
+    function handleEditChange(e){
+        console.log(parseInt(e.target.value)<=goal.amount)
+        if(e.target.value===''){
+            setNewSaved('')
+        } else if(parseInt(e.target.value)<=goal.amount){
+            setNewSaved(parseInt(e.target.value))
+        }
+    }
     function handleEditSubmit(e){
         e.preventDefault()
         const numb=parseInt(newSaved)
@@ -27,10 +35,9 @@ function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
         })
         .then(resp=>resp.json())
         .then(data=>{
-            setIsEdit(false)
             onSavingsEdit({...goal, saved: numb})
         })
-        
+        setIsEdit(false)
     }
 
     return (
@@ -44,7 +51,7 @@ function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
             <p>Goal amount: {goal.amount}  /  Saved: {goal.saved}  /  Percent saved: {percentageComplete}%</p>
             {isEdit ? <form onSubmit={handleEditSubmit}>
                 <label>New saved amount:</label>
-                <input type='number' value={newSaved} onChange={e=>setNewSaved(e.target.value)}></input>
+                <input type='number' value={newSaved} onChange={handleEditChange}></input>
                 <button>Submit</button>
             </form> : null}
             <div className="goal-box">
