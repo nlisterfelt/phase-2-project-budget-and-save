@@ -15,7 +15,7 @@ function SavingsCard({goal, onSavingsDelete}){
         })
         onSavingsDelete(goal.id)
     }
-    function handleEdit(){
+    function handleEditSubmit(){
         fetch(`http://localhost:3000/goals/${goal.id}`, {
             method: 'PATCH', 
             headers: {'content-type': 'application/json'},
@@ -24,19 +24,21 @@ function SavingsCard({goal, onSavingsDelete}){
             })
         })
     }
+    console.log(newSaved)
     return (
         <div >
             <h3>
                 {goal.description}
-                <button className='editDelete' onClick={handleEdit}>Edit</button>
+                <button className='editDelete' onClick={e=>setIsEdit(true)}>Edit</button>
                 <button className='editDelete' onClick={handleDelete}>X</button>
             </h3> 
             
             <p>Goal amount: {goal.amount}  /  Saved: {goal.saved}  /  Percent saved: {percentageComplete}%</p>
-            <form>
+            {isEdit ? <form>
                 <label>New saved amount:</label>
-                <input></input>
-            </form>
+                <input type='number' value={newSaved} onChange={e=>setNewSaved(e.target.value)}></input>
+                <button>Submit</button>
+            </form> : null}
             <div className="goal-box">
                 <div style={newStyle}></div>
             </div>
