@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function SavingsCard({goal, onSavingsDelete}){
+function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
     const [newSaved, setNewSaved]=useState(goal.saved)
     const [isEdit, setIsEdit]=useState(false)
     const percentageComplete = goal.saved/goal.amount*100
@@ -17,14 +17,20 @@ function SavingsCard({goal, onSavingsDelete}){
     }
     function handleEditSubmit(e){
         e.preventDefault()
+        const numb=parseInt(newSaved)
         fetch(`http://localhost:3000/goals/${goal.id}`, {
             method: 'PATCH', 
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({
-                saved: newSaved
+                saved: numb
             })
         })
-        setIsEdit(false)
+        .then(resp=>resp.json())
+        .then(data=>{
+            setIsEdit(false)
+            onSavingsEdit({...goal, saved: numb})
+        })
+        
     }
 
     return (

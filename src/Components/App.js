@@ -46,6 +46,17 @@ function App() {
     const newGoals=goals.filter(goal=>goal.id!==id)
     setGoals(newGoals)
   }
+  function handleSavingsEdit(updatedGoal){
+    const newGoals = goals.map(goal=>{
+      if(goal.id===updatedGoal.id){
+        return updatedGoal
+      } else {
+        return goal
+      }
+    })
+    setGoals(newGoals)
+    console.log(newGoals)
+  }
   function handleBudgetItemDelete(id){
     const newBudgetItems=budgetItems.filter(item=>item.id!==id)
     setBudgetItems(newBudgetItems)
@@ -59,7 +70,7 @@ function App() {
           <Home />
         </Route>
         <Route exact path='/savings'>
-          <Savings goals={goals} onSavingsDelete={handleSavingsDelete}/>
+          <Savings goals={goals} onSavingsDelete={handleSavingsDelete} onSavingsEdit={handleSavingsEdit}/>
         </Route>
         <Route path='/savings/new'>
           <NewSavings onSavingsSubmit={handleSavingsSubmit}/>
