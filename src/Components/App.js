@@ -36,9 +36,7 @@ function App() {
   }, [])
 
 
-  function handleBudgetSubmit(data){
-    setBudgetItems([...budgetItems, data])
-  }
+  
   function handleSavingsSubmit(data){
     setGoals([...goals, data])
   }
@@ -55,6 +53,15 @@ function App() {
       }
     })
     setGoals(newGoals)
+  }
+
+  function handleBudgetSubmit(item){
+    if(item.category==='Income'){
+      setTotalIncome(totalIncome+item.amount)
+    } else {
+      setTotalSpent(totalSpent+item.amount)
+    }
+    setBudgetItems([...budgetItems, item])
   }
   function handleBudgetItemDelete(id){
     const newBudgetItems=budgetItems.filter(item=>item.id!==id)
