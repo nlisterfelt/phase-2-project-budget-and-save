@@ -22,25 +22,18 @@
       "id": 8
     },
     {
-      "name": "walmart",
-      "date": 1,
-      "amount": 61,
-      "category": "Food",
-      "id": 10
-    },
-    {
-      "name": "walmart",
-      "date": 5,
-      "amount": 3,
-      "category": "Miscellaneous",
-      "id": 11
-    },
-    {
       "name": "misc",
-      "date": 3,
-      "amount": 150,
+      "date": 5,
+      "amount": 200,
       "category": "Income",
-      "id": 12
+      "id": 9
+    },
+    {
+      "name": "vacation",
+      "date": 21,
+      "amount": 500,
+      "category": "Savings",
+      "id": 10
     }
   ],
   "goals": [

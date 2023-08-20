@@ -55,16 +55,21 @@ function App() {
     setGoals(newGoals)
   }
 
-  function handleBudgetSubmit(item){
-    if(item.category==='Income'){
-      setTotalIncome(totalIncome+item.amount)
+  function handleBudgetSubmit(data){
+    if(data.category==='Income'){
+      setTotalIncome(totalIncome+data.amount)
     } else {
-      setTotalSpent(totalSpent+item.amount)
+      setTotalSpent(totalSpent+data.amount)
     }
-    setBudgetItems([...budgetItems, item])
+    setBudgetItems([...budgetItems, data])
   }
-  function handleBudgetItemDelete(id){
-    const newBudgetItems=budgetItems.filter(item=>item.id!==id)
+  function handleBudgetItemDelete(data){ 
+    if(data.category==='Income'){
+      setTotalIncome(totalIncome-data.amount)
+    } else {
+      setTotalSpent(totalSpent-data.amount)
+    }
+    const newBudgetItems=budgetItems.filter(item=>item.id!==data.id)
     setBudgetItems(newBudgetItems)
   }
 
