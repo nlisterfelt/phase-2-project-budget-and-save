@@ -12,8 +12,9 @@ function NewSavings({onSavingsSubmit}){
         if(e.target.type==='number'){
             if(e.target.value===''){
                 setSavingsFormData({...savingsFormData, [e.target.name]: ''})
-            //} else if(e.target.name==='saved'){
-                //setSavingsFormData({...savingsFormData, [e.target.name]: parseFloat(e.target.value)})  
+            } else if(e.target.name==='saved'){
+                if(e.target.value>=0 && e.target.value<=savingsFormData.amount)
+                setSavingsFormData({...savingsFormData, [e.target.name]: parseFloat(e.target.value)})  
             } else if(e.target.value>=0){
                 setSavingsFormData({...savingsFormData, [e.target.name]: parseFloat(e.target.value)})
             }
