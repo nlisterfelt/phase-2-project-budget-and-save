@@ -65,21 +65,15 @@
       "id": 1
     },
     {
-      "description": "Chrismas",
-      "amount": 1000,
-      "saved": 200,
-      "id": 2
-    },
-    {
-      "description": "New car",
-      "amount": 20000,
-      "saved": 14000,
+      "description": "birthday",
+      "amount": 500,
+      "saved": 400,
       "id": 3
     },
     {
-      "description": "Buy a house",
-      "amount": 20000,
-      "saved": 1000,
+      "description": "new car",
+      "amount": 30000,
+      "saved": 10000,
       "id": 4
     }
   ]
