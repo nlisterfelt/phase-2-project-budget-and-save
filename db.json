@@ -1,20 +1,6 @@
 {
   "budget": [
     {
-      "name": "paycheck 1",
-      "date": 2,
-      "amount": 1111,
-      "category": "Income",
-      "id": 3
-    },
-    {
-      "name": "paycheck 2",
-      "date": 15,
-      "amount": 2000,
-      "category": "Income",
-      "id": 5
-    },
-    {
       "name": "Legos",
       "date": 12,
       "amount": 250,
@@ -34,6 +20,27 @@
       "amount": 500,
       "category": "Savings",
       "id": 10
+    },
+    {
+      "name": "target",
+      "date": 1,
+      "amount": 121.53,
+      "category": "Miscellaneous",
+      "id": 11
+    },
+    {
+      "name": "water",
+      "date": 6,
+      "amount": 154.28,
+      "category": "Expenses",
+      "id": 12
+    },
+    {
+      "name": "Paycheck 1",
+      "date": 2,
+      "amount": 1050,
+      "category": "Income",
+      "id": 13
     }
   ],
   "goals": [

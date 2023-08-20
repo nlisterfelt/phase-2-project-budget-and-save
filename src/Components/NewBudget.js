@@ -29,7 +29,7 @@ function NewBudget({categories, onBudgetSubmit}){
             if (e.target.value===''){
                 setFormData({...formData, [e.target.name]: ''})
             } else {
-                const numb = parseInt(e.target.value, 10)
+                const numb = parseFloat(e.target.value)
                 setFormData({...formData, [e.target.name]: numb})
             }
         } else {
