@@ -2,6 +2,8 @@ import React from "react";
 
 function CategoryCards({budgetItems, category, onBudgetItemDelete}){
     const items = budgetItems.filter(item=>item.category===category)
+        .sort((a, b)=>(a.date>=b.date) ? 1 : -1)
+
     function handleDelete(id){
         fetch(`http://localhost:3000/budget/${id}`,{
             method: 'DELETE'

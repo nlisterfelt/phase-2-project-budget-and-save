@@ -16,7 +16,6 @@ function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
         onSavingsDelete(goal.id)
     }
     function handleEditChange(e){
-        console.log(parseInt(e.target.value)<=goal.amount)
         if(e.target.value===''){
             setNewSaved('')
         } else if(parseInt(e.target.value)<=goal.amount){

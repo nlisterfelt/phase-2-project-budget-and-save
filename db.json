@@ -48,6 +48,13 @@
       "amount": 150,
       "category": "Income",
       "id": 9
+    },
+    {
+      "name": "christmas",
+      "date": 1,
+      "amount": 300,
+      "category": "Savings",
+      "id": 10
     }
   ],
   "goals": [
