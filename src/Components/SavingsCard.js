@@ -3,7 +3,7 @@ import React, {useState} from "react";
 function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
     const [newSaved, setNewSaved]=useState(goal.saved)
     const [isEdit, setIsEdit]=useState(false)
-    const percentageComplete = goal.saved/goal.amount*100
+    const percentageComplete = Math.round(goal.saved/goal.amount*10000)/100
     const newStyle = {
         backgroundColor: "rgb(0, 128, 0)",
         width: percentageComplete+"%",
