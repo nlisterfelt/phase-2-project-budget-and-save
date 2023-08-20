@@ -47,7 +47,7 @@
     {
       "description": "Vacation",
       "amount": 2000,
-      "saved": 1,
+      "saved": 5,
       "id": 1
     },
     {
@@ -59,7 +59,7 @@
     {
       "description": "new car",
       "amount": 30000,
-      "saved": 10000,
+      "saved": 15000,
       "id": 4
     }
   ]

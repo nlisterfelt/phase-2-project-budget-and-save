@@ -12,9 +12,10 @@ function NewSavings({onSavingsSubmit}){
         if(e.target.type==='number'){
             if(e.target.value===''){
                 setSavingsFormData({...savingsFormData, [e.target.name]: ''})
-            } else {
-            const numb = parseInt(e.target.value, 10)
-            setSavingsFormData({...savingsFormData, [e.target.name]: numb})
+            //} else if(e.target.name==='saved'){
+                //setSavingsFormData({...savingsFormData, [e.target.name]: parseFloat(e.target.value)})  
+            } else if(e.target.value>=0){
+                setSavingsFormData({...savingsFormData, [e.target.name]: parseFloat(e.target.value)})
             }
         } else {
             setSavingsFormData({...savingsFormData, [e.target.name]: e.target.value})

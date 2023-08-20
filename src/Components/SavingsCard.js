@@ -18,7 +18,7 @@ function SavingsCard({goal, onSavingsDelete, onSavingsEdit}){
     function handleEditChange(e){
         if(e.target.value===''){
             setNewSaved('')
-        } else if(parseInt(e.target.value)<=goal.amount){
+        } else if(parseFloat(e.target.value)<=goal.amount && parseFloat(e.target.value)>=0){
             setNewSaved(parseInt(e.target.value))
         }
     }
