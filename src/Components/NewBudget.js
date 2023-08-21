@@ -39,7 +39,6 @@ function NewBudget({categories, onBudgetSubmit}){
             setFormData({...formData, [e.target.name]: e.target.value})
         }
     }
-    console.log(formData.date)
     return (
         <div> 
             <h3>New Budget Item Form</h3>
