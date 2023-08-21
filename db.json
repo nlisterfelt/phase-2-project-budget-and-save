@@ -29,25 +29,18 @@
       "id": 11
     },
     {
-      "name": "water",
-      "date": 6,
-      "amount": 154.28,
-      "category": "Expenses",
-      "id": 12
-    },
-    {
-      "name": "Paycheck 1",
-      "date": 2,
-      "amount": 1050,
+      "name": "paycheck 1",
+      "date": 5,
+      "amount": 1000,
       "category": "Income",
-      "id": 13
+      "id": 12
     }
   ],
   "goals": [
     {
       "description": "Vacation",
       "amount": 2000,
-      "saved": 5,
+      "saved": 100,
       "id": 1
     },
     {
@@ -59,8 +52,14 @@
     {
       "description": "new car",
       "amount": 30000,
-      "saved": 15000,
+      "saved": 15500,
       "id": 4
+    },
+    {
+      "description": "christmas",
+      "amount": 200,
+      "saved": 50,
+      "id": 5
     }
   ]
 }
